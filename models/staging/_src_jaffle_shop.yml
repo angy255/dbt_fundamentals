@@ -1,0 +1,16 @@
+sources:
+  - name: jaffle_shop #name corresponds to the name of the source in dbt_project.yml
+    database: raw #not the same as the target db in this case, this is the db where the source tables are located
+    schema: jaffle_shop
+    tables: #data objects that we are explictly connecting to in our project
+      - name: customers
+      - name: orders
+        config:
+          freshness:
+            warn_after: 
+              count: 24
+              period: hour
+            error_after: 
+              count: 48
+              period: hour
+          loaded_at_field: _etl_loaded_at
