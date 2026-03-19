@@ -4828,3 +4828,632 @@ select * from final
 Finished 'build' successfully for target 'dev' [6.2s]
 Processed: 5 models | 9 tests
 Summary: 14 total | 14 success
+==================== 2026-03-19T03:44:26.174906Z | 019d0431-ce2a-7b63-a14e-3cb0cbdcdbaf ====================
+03:44:26.179449 [info ]: dbt-fusion 2.0.0-preview.154
+03:44:26.185564 [info ]: Started loading project
+03:44:26.220160 [info ]: Loading ~/.dbt/profiles.yml
+03:44:26.586434 [info ]: Loading packages.yml
+03:44:26.589830 [debug]:    Started loading packages
+03:44:26.609335 [debug]:     Loaded [  0.02s] packages
+03:44:26.617854 [info ]: Finished loading project [  0.43s]
+03:44:26.623484 [info ]: Started parsing
+03:44:26.748632 [debug]: Finished parsing models/staging/jaffle_shop/_src_jaffle_shop.yml [  0.01s]
+03:44:26.749351 [debug]: Finished parsing models/staging/jaffle_shop/_stg_jaffle_shop.yml [  0.00s]
+03:44:26.749571 [debug]: Finished parsing models/staging/stripe/_src_stripe.yml [  0.00s]
+03:44:26.774805 [debug]: Finished parsing models/marts/dim_customers.sql [  0.01s]
+03:44:26.775388 [debug]: Finished parsing models/marts/finance/fct_orders.sql [  0.00s]
+03:44:26.776303 [debug]: Finished parsing models/staging/jaffle_shop/stg_jaffle_shop_customers.sql [  0.00s]
+03:44:26.776970 [debug]: Finished parsing models/staging/jaffle_shop/stg_jaffle_shop_orders.sql [  0.00s]
+03:44:26.777449 [debug]: Finished parsing models/staging/stripe/stg_stripe_payments.sql [  0.00s]
+03:44:26.791529 [debug]: Finished parsing tests/assert_stg_stripe_payment_total_positive.sql [  0.00s]
+03:44:26.792657 [debug]: Finished parsing target/generic_tests/source_unique_jaffle_shop_customers_id.sql [  0.00s]
+03:44:26.793289 [debug]: Finished parsing target/generic_tests/source_not_null_jaffle_shop_customers_id.sql [  0.00s]
+03:44:26.793851 [debug]: Finished parsing target/generic_tests/unique_stg_jaffle_shop_customers_customer_id.sql [  0.00s]
+03:44:26.794454 [debug]: Finished parsing target/generic_tests/not_null_stg_jaffle_shop_customers_customer_id.sql [  0.00s]
+03:44:26.795077 [debug]: Finished parsing target/generic_tests/relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.sql [  0.00s]
+03:44:26.795740 [debug]: Finished parsing target/generic_tests/unique_stg_jaffle_shop_orders_order_id.sql [  0.00s]
+03:44:26.796309 [debug]: Finished parsing target/generic_tests/not_null_stg_jaffle_shop_orders_order_id.sql [  0.00s]
+03:44:26.796963 [debug]: Finished parsing target/generic_tests/accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.sql [  0.00s]
+03:44:26.808549 [info ]: Finished parsing [  0.19s]
+03:44:26.813507 [info ]: Started scheduling
+03:44:26.817297 [info ]: Finished scheduling [  0.00s]
+03:44:26.827922 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "JAFFLE_SHOP", table: "CUSTOMERS" }) and interval: None
+03:44:26.828306 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "STRIPE", table: "PAYMENT" }) and interval: None
+03:44:26.828332 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "JAFFLE_SHOP", table: "ORDERS" }) and interval: None
+03:44:27.195584 [info ]: Started building task graph
+03:44:27.200354 [info ]: Finished building task graph [  0.00s]
+03:44:28.560869 [debug]: Query executed on node unknown:
+show terse schemas in database analytics
+    limit 10000
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "default", "target_name": "dev"} */
+03:44:28.573311 [info ]: Started rendering (5 nodes)
+03:44:28.574541 [info ]: Started model dbt_amatos.stg_stripe_payments
+03:44:28.575232 [debug]: Started rendering model dbt_amatos.stg_stripe_payments
+03:44:28.575623 [info ]: Started model dbt_amatos.fct_orders
+03:44:28.575640 [debug]: Started rendering model dbt_amatos.fct_orders
+03:44:28.575668 [info ]: Started model dbt_amatos.stg_jaffle_shop_orders
+03:44:28.575682 [debug]: Started rendering model dbt_amatos.stg_jaffle_shop_orders
+03:44:28.575706 [info ]: Started model dbt_amatos.stg_jaffle_shop_customers
+03:44:28.575720 [debug]: Started rendering model dbt_amatos.stg_jaffle_shop_customers
+03:44:28.586553 [debug]: Compiled SQL for node model.jaffle_shop.fct_orders at target/compiled/models/marts/finance/fct_orders.sql
+03:44:28.586725 [debug]: Compiled SQL for node model.jaffle_shop.stg_jaffle_shop_customers at target/compiled/models/staging/jaffle_shop/stg_jaffle_shop_customers.sql
+03:44:28.586730 [debug]: Compiled SQL for node model.jaffle_shop.stg_stripe_payments at target/compiled/models/staging/stripe/stg_stripe_payments.sql
+03:44:28.586737 [debug]: Compiled SQL for node model.jaffle_shop.stg_jaffle_shop_orders at target/compiled/models/staging/jaffle_shop/stg_jaffle_shop_orders.sql
+03:44:28.587568 [debug]: Finished rendering [  0.01s] model dbt_amatos.stg_stripe_payments [success]
+03:44:28.588053 [info ]: Started analyzing (5 nodes)
+03:44:28.588124 [debug]: Started analyzing model dbt_amatos.stg_stripe_payments
+03:44:28.588470 [debug]: Finished rendering [  0.01s] model dbt_amatos.fct_orders [success]
+03:44:28.588527 [debug]: Started analyzing model dbt_amatos.fct_orders
+03:44:28.588554 [debug]: Finished rendering [  0.01s] model dbt_amatos.stg_jaffle_shop_customers [success]
+03:44:28.588602 [debug]: Started analyzing model dbt_amatos.stg_jaffle_shop_customers
+03:44:28.588625 [debug]: Finished rendering [  0.01s] model dbt_amatos.stg_jaffle_shop_orders [success]
+03:44:28.588669 [debug]: Started analyzing model dbt_amatos.stg_jaffle_shop_orders
+03:44:28.744426 [debug]: Finished analyzing [  0.16s] model dbt_amatos.stg_stripe_payments [success]
+03:44:28.744548 [info ]: Started running (5 nodes)
+03:44:28.744606 [debug]: Started running model dbt_amatos.stg_stripe_payments
+03:44:28.744640 [debug]: Finished analyzing [  0.16s] model dbt_amatos.fct_orders [success]
+03:44:28.744706 [debug]: Started running model dbt_amatos.fct_orders
+03:44:28.744732 [debug]: Finished analyzing [  0.16s] model dbt_amatos.stg_jaffle_shop_orders [success]
+03:44:28.744792 [debug]: Started running model dbt_amatos.stg_jaffle_shop_orders
+03:44:28.744815 [debug]: Finished analyzing [  0.16s] model dbt_amatos.stg_jaffle_shop_customers [success]
+03:44:28.744874 [info ]: Started model dbt_amatos.dim_customers
+03:44:28.744892 [debug]: Started rendering model dbt_amatos.dim_customers
+03:44:28.744913 [debug]: Started running model dbt_amatos.stg_jaffle_shop_customers
+03:44:28.746174 [debug]: Compiled SQL for node model.jaffle_shop.dim_customers at target/compiled/models/marts/dim_customers.sql
+03:44:28.746367 [debug]: Finished rendering [  0.00s] model dbt_amatos.dim_customers [success]
+03:44:28.746429 [info ]: Finished rendering [  0.17s] (5 nodes, 0 skipped, 0 errors)
+03:44:28.746501 [debug]: Started analyzing model dbt_amatos.dim_customers
+03:44:28.845737 [debug]: Finished analyzing [  0.10s] model dbt_amatos.dim_customers [success]
+03:44:28.845822 [info ]: Finished analyzing [  0.26s] (5 nodes, 0 skipped, 0 errors)
+03:44:29.152229 [debug]: Query executed on node model.jaffle_shop.stg_jaffle_shop_orders:
+SHOW OBJECTS IN SCHEMA "ANALYTICS"."DBT_AMATOS" LIMIT 10000
+03:44:29.157803 [debug]: Writing runtime sql for node "model.jaffle_shop.stg_jaffle_shop_orders"
+03:44:29.517541 [debug]: Query executed on node model.jaffle_shop.stg_jaffle_shop_orders:
+create or replace   view analytics.dbt_amatos.stg_jaffle_shop_orders
+  
+  
+  
+  
+  as (
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status,
+        _etl_loaded_at
+        
+    from raw.jaffle_shop.orders
+    -- this is our source macro, instead of hardcoding table reference
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.jaffle_shop.stg_jaffle_shop_orders", "profile_name": "default", "target_name": "dev"} */
+03:44:29.523854 [info ]:  Succeeded [  0.95s] model dbt_amatos.stg_jaffle_shop_orders (view)
+03:44:29.524066 [debug]: Finished running [  0.78s] model dbt_amatos.stg_jaffle_shop_orders [success]
+03:44:29.778324 [debug]: Query executed on node model.jaffle_shop.fct_orders:
+SHOW OBJECTS IN SCHEMA "ANALYTICS"."DBT_AMATOS" LIMIT 10000
+03:44:29.781596 [debug]: Writing runtime sql for node "model.jaffle_shop.fct_orders"
+03:44:29.807984 [debug]: Query executed on node model.jaffle_shop.stg_stripe_payments:
+SHOW OBJECTS IN SCHEMA "ANALYTICS"."DBT_AMATOS" LIMIT 10000
+03:44:29.809998 [debug]: Query executed on node model.jaffle_shop.stg_jaffle_shop_customers:
+SHOW OBJECTS IN SCHEMA "ANALYTICS"."DBT_AMATOS" LIMIT 10000
+03:44:29.810859 [debug]: Writing runtime sql for node "model.jaffle_shop.stg_stripe_payments"
+03:44:29.812424 [debug]: Writing runtime sql for node "model.jaffle_shop.stg_jaffle_shop_customers"
+03:44:30.009088 [debug]: Query executed on node model.jaffle_shop.stg_jaffle_shop_customers:
+create or replace   view analytics.dbt_amatos.stg_jaffle_shop_customers
+  
+  
+  
+  
+  as (
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from raw.jaffle_shop.customers 
+    -- grabbing from our source and table name
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.jaffle_shop.stg_jaffle_shop_customers", "profile_name": "default", "target_name": "dev"} */
+03:44:30.011489 [info ]:  Succeeded [  1.43s] model dbt_amatos.stg_jaffle_shop_customers (view)
+03:44:30.011586 [debug]: Finished running [  1.27s] model dbt_amatos.stg_jaffle_shop_customers [success]
+03:44:30.011665 [debug]: Started running model dbt_amatos.dim_customers
+03:44:30.015296 [debug]: Writing runtime sql for node "model.jaffle_shop.dim_customers"
+03:44:30.016859 [debug]: Query executed on node model.jaffle_shop.stg_stripe_payments:
+create or replace   view analytics.dbt_amatos.stg_stripe_payments
+  
+  
+  
+  
+  as (
+    select
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status,
+
+    --  amount is stored in cents, convert it to dollars
+    amount / 100 as amount,
+    created as created_at
+
+from raw.stripe.payment
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.jaffle_shop.stg_stripe_payments", "profile_name": "default", "target_name": "dev"} */
+03:44:30.018685 [info ]:  Succeeded [  1.44s] model dbt_amatos.stg_stripe_payments (view)
+03:44:30.018771 [debug]: Finished running [  1.27s] model dbt_amatos.stg_stripe_payments [success]
+03:44:31.055586 [debug]: Query executed on node model.jaffle_shop.fct_orders:
+create or replace transient  table analytics.dbt_amatos.fct_orders
+    
+    
+    
+    as (select
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status,
+
+    -- amount is stored in cents, convert it to dollars
+    amount / 100 as amount,
+    created as created_at
+
+from raw.stripe.payment 
+    )
+
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.jaffle_shop.fct_orders", "profile_name": "default", "target_name": "dev"} */
+03:44:31.057998 [info ]:  Succeeded [  2.48s] model dbt_amatos.fct_orders (table)
+03:44:31.058121 [debug]: Finished running [  2.31s] model dbt_amatos.fct_orders [success]
+03:44:31.137558 [debug]: Query executed on node model.jaffle_shop.dim_customers:
+create or replace transient  table analytics.dbt_amatos.dim_customers
+    
+    
+    
+    as (with customers as (
+
+select * from analytics.dbt_amatos.stg_jaffle_shop_customers
+),
+
+orders as (
+
+select * from analytics.dbt_amatos.stg_jaffle_shop_orders    
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+    )
+
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.jaffle_shop.dim_customers", "profile_name": "default", "target_name": "dev"} */
+03:44:31.139971 [info ]:  Succeeded [  1.23s] model dbt_amatos.dim_customers (table)
+03:44:31.140086 [debug]: Finished running [  1.13s] model dbt_amatos.dim_customers [success]
+03:44:31.140129 [info ]: Finished running [  2.40s] (5 nodes, 0 skipped, 0 errors)
+03:44:31.229723 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [5.1s]
+Processed: 5 models
+Summary: 5 total | 5 success
+==================== 2026-03-19T03:44:35.902766Z | 019d0431-f43d-7362-8417-c46358ea272e ====================
+03:44:35.902936 [info ]: dbt-fusion 2.0.0-preview.154
+03:44:35.903244 [info ]: Started loading project
+03:44:35.904640 [info ]: Loading ~/.dbt/profiles.yml
+03:44:36.204846 [info ]: Loading packages.yml
+03:44:36.205116 [debug]:    Started loading packages
+03:44:36.208776 [debug]:     Loaded [  0.00s] packages
+03:44:36.209610 [info ]: Finished loading project [  0.31s]
+03:44:36.210223 [info ]: Started parsing
+03:44:36.272795 [debug]: Finished parsing models/staging/jaffle_shop/_src_jaffle_shop.yml [  0.00s]
+03:44:36.273103 [debug]: Finished parsing models/staging/jaffle_shop/_stg_jaffle_shop.yml [  0.00s]
+03:44:36.273309 [debug]: Finished parsing models/staging/stripe/_src_stripe.yml [  0.00s]
+03:44:36.276516 [debug]: Finished parsing models/marts/dim_customers.sql [  0.00s]
+03:44:36.277070 [debug]: Finished parsing models/marts/finance/fct_orders.sql [  0.00s]
+03:44:36.277670 [debug]: Finished parsing models/staging/jaffle_shop/stg_jaffle_shop_customers.sql [  0.00s]
+03:44:36.278315 [debug]: Finished parsing models/staging/jaffle_shop/stg_jaffle_shop_orders.sql [  0.00s]
+03:44:36.278856 [debug]: Finished parsing models/staging/stripe/stg_stripe_payments.sql [  0.00s]
+03:44:36.284557 [debug]: Finished parsing tests/assert_stg_stripe_payment_total_positive.sql [  0.00s]
+03:44:36.285277 [debug]: Finished parsing target/generic_tests/source_unique_jaffle_shop_customers_id.sql [  0.00s]
+03:44:36.285908 [debug]: Finished parsing target/generic_tests/source_not_null_jaffle_shop_customers_id.sql [  0.00s]
+03:44:36.286534 [debug]: Finished parsing target/generic_tests/unique_stg_jaffle_shop_customers_customer_id.sql [  0.00s]
+03:44:36.287451 [debug]: Finished parsing target/generic_tests/not_null_stg_jaffle_shop_customers_customer_id.sql [  0.00s]
+03:44:36.288122 [debug]: Finished parsing target/generic_tests/relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.sql [  0.00s]
+03:44:36.288866 [debug]: Finished parsing target/generic_tests/unique_stg_jaffle_shop_orders_order_id.sql [  0.00s]
+03:44:36.289477 [debug]: Finished parsing target/generic_tests/not_null_stg_jaffle_shop_orders_order_id.sql [  0.00s]
+03:44:36.290089 [debug]: Finished parsing target/generic_tests/accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.sql [  0.00s]
+03:44:36.295433 [info ]: Finished parsing [  0.09s]
+03:44:36.295854 [info ]: Started scheduling
+03:44:36.296094 [info ]: Finished scheduling [  0.00s]
+03:44:36.299181 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "ANALYTICS", schema: "DBT_AMATOS", table: "STG_JAFFLE_SHOP_CUSTOMERS" }) and interval: None
+03:44:36.299223 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "ANALYTICS", schema: "DBT_AMATOS", table: "STG_JAFFLE_SHOP_ORDERS" }) and interval: None
+03:44:36.299239 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "ANALYTICS", schema: "DBT_AMATOS", table: "STG_STRIPE_PAYMENTS" }) and interval: None
+03:44:36.299252 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "JAFFLE_SHOP", table: "CUSTOMERS" }) and interval: None
+03:44:36.618216 [info ]: Started building task graph
+03:44:36.618557 [info ]: Finished building task graph [  0.00s]
+03:44:36.619023 [info ]: Started rendering (9 nodes)
+03:44:36.619146 [info ]: Started test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id
+03:44:36.619178 [debug]: Started rendering test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id
+03:44:36.619232 [info ]: Started test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id
+03:44:36.619243 [debug]: Started rendering test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id
+03:44:36.619286 [info ]: Started test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id
+03:44:36.619296 [debug]: Started rendering test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id
+03:44:36.619356 [info ]: Started test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id
+03:44:36.619388 [debug]: Started rendering test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id
+03:44:36.619436 [info ]: Started test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_
+03:44:36.619469 [debug]: Started rendering test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_
+03:44:36.619486 [info ]: Started test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id
+03:44:36.619510 [debug]: Started rendering test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id
+03:44:36.619556 [info ]: Started test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id
+03:44:36.619580 [debug]: Started rendering test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id
+03:44:36.619641 [info ]: Started test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive
+03:44:36.619668 [debug]: Started rendering test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive
+03:44:36.619723 [info ]: Started test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending
+03:44:36.619733 [debug]: Started rendering test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending
+03:44:36.624195 [debug]: Compiled SQL for node test.jaffle_shop.assert_stg_stripe_payment_total_positive.1a8f153c72 at target/compiled/tests/assert_stg_stripe_payment_total_positive.sql
+03:44:36.624278 [debug]: Finished rendering [  0.00s] test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive [success]
+03:44:36.624357 [info ]: Started analyzing (9 nodes)
+03:44:36.624405 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive
+03:44:36.628439 [debug]: Compiled SQL for node test.jaffle_shop.unique_stg_jaffle_shop_customers_customer_id.b9becc3999 at target/compiled/generic_tests/unique_stg_jaffle_shop_customers_customer_id.sql
+03:44:36.628622 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id [success]
+03:44:36.628707 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id
+03:44:36.628711 [debug]: Compiled SQL for node test.jaffle_shop.not_null_stg_jaffle_shop_customers_customer_id.1828149cc2 at target/compiled/generic_tests/not_null_stg_jaffle_shop_customers_customer_id.sql
+03:44:36.628837 [debug]: Compiled SQL for node test.jaffle_shop.source_unique_jaffle_shop_customers_id.2777a7933e at target/compiled/generic_tests/source_unique_jaffle_shop_customers_id.sql
+03:44:36.628841 [debug]: Compiled SQL for node test.jaffle_shop.source_not_null_jaffle_shop_customers_id.50aa22178f at target/compiled/generic_tests/source_not_null_jaffle_shop_customers_id.sql
+03:44:36.628848 [debug]: Compiled SQL for node test.jaffle_shop.relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.06e374b302 at target/compiled/generic_tests/relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.sql
+03:44:36.628856 [debug]: Compiled SQL for node test.jaffle_shop.not_null_stg_jaffle_shop_orders_order_id.489806f7af at target/compiled/generic_tests/not_null_stg_jaffle_shop_orders_order_id.sql
+03:44:36.628870 [debug]: Compiled SQL for node test.jaffle_shop.accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.a557d85787 at target/compiled/generic_tests/accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.sql
+03:44:36.628879 [debug]: Compiled SQL for node test.jaffle_shop.unique_stg_jaffle_shop_orders_order_id.50aa8222ac at target/compiled/generic_tests/unique_stg_jaffle_shop_orders_order_id.sql
+03:44:36.628896 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id [success]
+03:44:36.629001 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id
+03:44:36.629032 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id [success]
+03:44:36.629106 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id
+03:44:36.629134 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_ [success]
+03:44:36.629198 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_
+03:44:36.629222 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id [success]
+03:44:36.629283 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id
+03:44:36.629306 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id [success]
+03:44:36.629360 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id
+03:44:36.629383 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id [success]
+03:44:36.629438 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id
+03:44:36.629470 [debug]: Finished rendering [  0.01s] test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending [success]
+03:44:36.629507 [info ]: Finished rendering [  0.01s] (9 nodes, 0 skipped, 0 errors)
+03:44:36.629564 [debug]: Started analyzing test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending
+03:44:36.721997 [debug]: Finished analyzing [  0.09s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id [success]
+03:44:36.722120 [info ]: Started running (9 nodes)
+03:44:36.722180 [debug]: Started running test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id
+03:44:36.722227 [debug]: Finished analyzing [  0.09s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id [success]
+03:44:36.722302 [debug]: Started running test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id
+03:44:36.722341 [debug]: Finished analyzing [  0.09s] test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id [success]
+03:44:36.722404 [debug]: Started running test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id
+03:44:36.723375 [debug]: Finished analyzing [  0.09s] test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_ [success]
+03:44:36.723608 [debug]: Started running test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_
+03:44:36.726343 [debug]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_jaffle_shop_orders_order_id.489806f7af"
+03:44:36.726536 [debug]: Writing runtime sql for node "test.jaffle_shop.source_not_null_jaffle_shop_customers_id.50aa22178f"
+03:44:36.727082 [debug]: Writing runtime sql for node "test.jaffle_shop.not_null_stg_jaffle_shop_customers_customer_id.1828149cc2"
+03:44:36.727289 [debug]: Writing runtime sql for node "test.jaffle_shop.relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.06e374b302"
+03:44:36.729167 [debug]: Finished analyzing [  0.10s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id [success]
+03:44:36.729276 [debug]: Started running test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id
+03:44:36.729316 [debug]: Finished analyzing [  0.10s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id [success]
+03:44:36.729380 [debug]: Started running test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id
+03:44:36.729406 [debug]: Finished analyzing [  0.10s] test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id [success]
+03:44:36.729467 [debug]: Started running test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id
+03:44:36.730176 [debug]: Finished analyzing [  0.10s] test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending [success]
+03:44:36.730271 [debug]: Started running test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending
+03:44:36.732947 [debug]: Writing runtime sql for node "test.jaffle_shop.unique_stg_jaffle_shop_customers_customer_id.b9becc3999"
+03:44:36.733012 [debug]: Writing runtime sql for node "test.jaffle_shop.source_unique_jaffle_shop_customers_id.2777a7933e"
+03:44:36.733337 [debug]: Writing runtime sql for node "test.jaffle_shop.unique_stg_jaffle_shop_orders_order_id.50aa8222ac"
+03:44:36.734883 [debug]: Writing runtime sql for node "test.jaffle_shop.accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.a557d85787"
+03:44:36.738248 [debug]: Finished analyzing [  0.11s] test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive [success]
+03:44:36.738379 [info ]: Finished analyzing [  0.11s] (9 nodes, 0 skipped, 0 errors)
+03:44:36.738685 [debug]: Started running test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive
+03:44:36.741747 [debug]: Writing runtime sql for node "test.jaffle_shop.assert_stg_stripe_payment_total_positive.1a8f153c72"
+03:44:37.108969 [debug]: Query executed on node test.jaffle_shop.source_not_null_jaffle_shop_customers_id.50aa22178f:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from raw.jaffle_shop.customers
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.source_not_null_jaffle_shop_customers_id.50aa22178f", "profile_name": "default", "target_name": "dev"} */
+03:44:37.108969 [debug]: Query executed on node test.jaffle_shop.source_unique_jaffle_shop_customers_id.2777a7933e:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from raw.jaffle_shop.customers
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.source_unique_jaffle_shop_customers_id.2777a7933e", "profile_name": "default", "target_name": "dev"} */
+03:44:37.111533 [info ]:     Passed [  0.49s] test  dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id
+03:44:37.111649 [debug]: Finished running [  0.39s] test dbt_amatos_dbt_test__audit.source_not_null_jaffle_shop_customers_id [pass]
+03:44:37.111721 [info ]:     Passed [  0.49s] test  dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id
+03:44:37.111778 [debug]: Finished running [  0.38s] test dbt_amatos_dbt_test__audit.source_unique_jaffle_shop_customers_id [pass]
+03:44:37.163222 [debug]: Query executed on node test.jaffle_shop.not_null_stg_jaffle_shop_customers_customer_id.1828149cc2:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from analytics.dbt_amatos.stg_jaffle_shop_customers
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.not_null_stg_jaffle_shop_customers_customer_id.1828149cc2", "profile_name": "default", "target_name": "dev"} */
+03:44:37.164788 [info ]:     Passed [  0.54s] test  dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id
+03:44:37.164936 [debug]: Finished running [  0.44s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_customers_customer_id [pass]
+03:44:37.165444 [debug]: Query executed on node test.jaffle_shop.unique_stg_jaffle_shop_customers_customer_id.b9becc3999:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from analytics.dbt_amatos.stg_jaffle_shop_customers
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.unique_stg_jaffle_shop_customers_customer_id.b9becc3999", "profile_name": "default", "target_name": "dev"} */
+03:44:37.166801 [info ]:     Passed [  0.55s] test  dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id
+03:44:37.166884 [debug]: Finished running [  0.44s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_customers_customer_id [pass]
+03:44:37.178034 [debug]: Query executed on node test.jaffle_shop.accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.a557d85787:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from analytics.dbt_amatos.stg_jaffle_shop_orders
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'placed','shipped','completed','returned','return_pending'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.accepted_values_stg_jaffle_sho_9e737f1742bbf5f35cc658b19a560db5.a557d85787", "profile_name": "default", "target_name": "dev"} */
+03:44:37.179516 [info ]:     Passed [  0.56s] test  dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending
+03:44:37.179650 [debug]: Finished running [  0.45s] test dbt_amatos_dbt_test__audit.accepted_values_stg_jaffle_shop_orders_status__placed__shipped__completed__returned__return_pending [pass]
+03:44:37.180107 [debug]: Query executed on node test.jaffle_shop.not_null_stg_jaffle_shop_orders_order_id.489806f7af:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from analytics.dbt_amatos.stg_jaffle_shop_orders
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.not_null_stg_jaffle_shop_orders_order_id.489806f7af", "profile_name": "default", "target_name": "dev"} */
+03:44:37.181682 [info ]:     Passed [  0.56s] test  dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id
+03:44:37.181786 [debug]: Finished running [  0.46s] test dbt_amatos_dbt_test__audit.not_null_stg_jaffle_shop_orders_order_id [pass]
+03:44:37.197792 [debug]: Query executed on node test.jaffle_shop.unique_stg_jaffle_shop_orders_order_id.50aa8222ac:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from analytics.dbt_amatos.stg_jaffle_shop_orders
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.unique_stg_jaffle_shop_orders_order_id.50aa8222ac", "profile_name": "default", "target_name": "dev"} */
+03:44:37.199232 [info ]:     Passed [  0.58s] test  dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id
+03:44:37.199337 [debug]: Finished running [  0.47s] test dbt_amatos_dbt_test__audit.unique_stg_jaffle_shop_orders_order_id [pass]
+03:44:37.204805 [debug]: Query executed on node test.jaffle_shop.relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.06e374b302:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from analytics.dbt_amatos.stg_jaffle_shop_orders
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from analytics.dbt_amatos.stg_jaffle_shop_customers
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.relationships_stg_jaffle_shop__3a4c5b7e76605024bff9af72d6fbad4e.06e374b302", "profile_name": "default", "target_name": "dev"} */
+03:44:37.206190 [info ]:     Passed [  0.58s] test  dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_
+03:44:37.206300 [debug]: Finished running [  0.48s] test dbt_amatos_dbt_test__audit.relationships_stg_jaffle_shop_orders_customer_id__customer_id__ref_stg_jaffle_shop_customers_ [pass]
+03:44:37.207952 [debug]: Query executed on node test.jaffle_shop.assert_stg_stripe_payment_total_positive.1a8f153c72:
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select
+  order_id,
+  sum(amount) as total_amount
+from analytics.dbt_amatos.stg_stripe_payments
+group by 1
+having total_amount < 0
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.jaffle_shop.assert_stg_stripe_payment_total_positive.1a8f153c72", "profile_name": "default", "target_name": "dev"} */
+03:44:37.209191 [info ]:     Passed [  0.59s] test  dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive
+03:44:37.209294 [debug]: Finished running [  0.47s] test dbt_amatos_dbt_test__audit.assert_stg_stripe_payment_total_positive [pass]
+03:44:37.209333 [info ]: Finished running [  0.49s] (9 nodes, 0 skipped, 0 errors)
+03:44:37.279619 [info ]: 
+==================== Execution Summary =====================
+Finished 'test' successfully for target 'dev' [1.4s]
+Processed: 9 tests
+Summary: 9 total | 9 success
+==================== 2026-03-19T03:46:52.684279Z | 019d0434-0a79-7600-b917-d982769e6677 ====================
+03:46:52.688154 [info ]: dbt-fusion 2.0.0-preview.154
+03:46:52.693675 [info ]: Started loading project
+03:46:52.727739 [info ]: Loading ~/.dbt/profiles.yml
+03:46:52.733412 [info ]: Finished loading project [  0.04s]
+03:46:52.736140 [error]: dbt1005: Target 'prod' not found in profiles.yml
+03:46:53.014572 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'prod' [330ms]
