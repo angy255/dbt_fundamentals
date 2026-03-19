@@ -1,9 +1,17 @@
 sources:
   - name: jaffle_shop #name corresponds to the name of the source in dbt_project.yml
+    description: A clone of a Postgres database
     database: raw #not the same as the target db in this case, this is the db where the source tables are located
     schema: jaffle_shop
     tables: #data objects that we are explictly connecting to in our project
-      - name: customers
+      - name: customers 
+        description: Raw customers data
+        columns: 
+        - name: id
+          description: primary key
+          data_tests:
+            - unique
+            - not_null 
       - name: orders
         config:
           freshness:
